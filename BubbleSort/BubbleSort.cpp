@@ -30,10 +30,11 @@ void main(){
             if(arr[j] > arr[j+1])
                 swap(arr[j],arr[j+1]);
 
-    //배열 초기화
+    //배열 출력
     for(int i=0;i<SIZE;i++){
-        arr[i] = rand()%100+1;
         cout<<arr[i]<<" ";
     }
     cout<<endl;
+
+    system("pause");
 }
