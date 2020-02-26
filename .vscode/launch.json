@@ -1,16 +1,23 @@
 {
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
     "version": "0.2.0",
     "configurations": [
-      {
-        "name": "(msvc) Launch",
-        "type": "cppvsdbg",
-        "request": "launch",
-        "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
-        "args": [],
-        "stopAtEntry": true,
-        "cwd": "${workspaceFolder}",
-        "environment": [],
-        "externalConsole": true
-      }
+        {
+            "name": "cl.exe build and debug active file",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [            ],
+            "externalConsole": true,
+            "logging": {
+                "moduleLoad": false
+            },
+            "preLaunchTask": "cl.exe build active file"
+        }
     ]
-  }
+}
