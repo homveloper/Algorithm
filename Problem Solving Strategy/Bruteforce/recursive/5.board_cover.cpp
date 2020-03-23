@@ -102,3 +102,11 @@ int cover(vector<vector<int>>& board){
     
     return result;
 }
+
+void main(){
+    vector<vector<int>> board = {
+        
+    }
+
+    cout<<cover()
+}
