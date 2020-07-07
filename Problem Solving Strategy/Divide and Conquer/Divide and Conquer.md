@@ -1,4 +1,4 @@
-분할정복
+Divide and Conquer
 =======
 
 1. divide : 문제를 더 작은 문제로 분할하는 과정

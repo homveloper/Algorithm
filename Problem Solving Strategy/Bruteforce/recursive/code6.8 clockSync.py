@@ -6,15 +6,15 @@ SWITCHES = 10
 CLOCKS = 16
 INF = 10000000000
 
-clocks = []
+# clocks = []
 
-for i in range(16):
-    direction = random.randint(1,4)
+# for i in range(16):
+#     direction = random.randint(1,4)
 
-    if direction == 1: clocks.append(3)
-    elif direction == 2: clocks.append(6)
-    elif direction == 3: clocks.append(9)
-    elif direction == 4: clocks.append(12)
+#     if direction == 1: clocks.append(3)
+#     elif direction == 2: clocks.append(6)
+#     elif direction == 3: clocks.append(9)
+#     elif direction == 4: clocks.append(12)
 
 linked = [
     [True] * 3 + [False] * 13,
