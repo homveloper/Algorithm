@@ -1,4 +1,5 @@
 import time
+from pprint import pprint
 
 """
     (n,r) = (n-1, r-1) + (n-1,r)
@@ -17,7 +18,7 @@ def bino(n, r):
 
 
 # 메모이제이션을 이용한 이항 계수 계산
-cache = [[-1] * 30] * 30
+cache = [[-1 for i in range(30)] for j in range(30)]
 
 def bino2(n, r):
     if r == 0 or n == r:
@@ -28,13 +29,10 @@ def bino2(n, r):
 
     cache[n][r] = bino2(n-1, r-1) + bino2(n-1, r)
 
-    # print(f"cache[{n}][{r}] : {cache[n][r]}")
-
     return cache[n][r]
 
-
-n = 4
-r = 2
+n = 28
+r = 15
 
 start = time.time()
 result = bino(n, r)
