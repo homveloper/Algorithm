@@ -12,11 +12,22 @@
           "${fileDirname}\\${fileBasenameNoExtension}.exe",
           "${file}"
         ],
-        "problemMatcher": ["$msCompile"],
+        "problemMatcher": [
+          "$msCompile"
+        ],
         "group": {
           "kind": "build",
           "isDefault": true
         }
+      },
+      {
+        "label": "excute",
+        "command": "cmd",
+        "group": "test",
+        "args": [
+          "/C",
+          "${fileDirname}\\${fileBasenameNoExtension}.exe"
+        ]
       }
     ]
   }
