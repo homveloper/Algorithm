@@ -1,11 +1,7 @@
 string = input()
-count = [0 for i in range(26)]
+count = list(map(string.count, [chr(65 + i) for i in range(26)]))
 perlin = ''
 middle = ''
-
-# count 세기
-for i in string:
-    count[ord(i)-ord('A')] += 1
 
 if len(string) % 2 == 1:
     for i,c in enumerate(count):
@@ -23,10 +19,7 @@ for i,c in enumerate(count):
     if c != 0:
         num = c//2
         count[i] -= num
-
-        for _ in range(num):
-            perlin += chr(65+i)
-    
+        perlin += chr(65+i) * num
         half_count -= 1
 
 for i in perlin[::-1]:
