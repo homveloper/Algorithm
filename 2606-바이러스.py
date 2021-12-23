@@ -6,9 +6,11 @@ E = int(input())
 graph = {}
 visited = [0 for _ in range(C+1)]
 
+# 그래프 초기화
 for i in range(C): 
     graph[i+1] = []
 
+# 무방향 그래프 생성
 for i in range(E):
     s,e = map(int, input().split())
     graph[s].append(e)
