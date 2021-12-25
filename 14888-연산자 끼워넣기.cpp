@@ -24,14 +24,13 @@ int main(){
         }
     }
 
-
     int min_value = 1'000'000'000;
     int max_value = -1'000'000'000;
 
     do{
         int result = operands[0];
         int idx = 0;
-        
+
         for(int i=0; i<N-1; i++){
             idx++;
             int op = operators[i];
