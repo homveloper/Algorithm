@@ -1,23 +1,16 @@
 from sys import stdin
+from collections import deque
+from itertools import islice
 
 input = stdin.readline
 inputs = stdin.readlines
 
 N, D, K, C = map(int,input().split())
-L = [int(i) for i in inputs()]
-
-i = 0
-j = K
-result = 0
+L = deque(map(int,inputs()))
+l,r,i,result = 0,K,0,0
 
 while i<N:
-
-    shusi = set()
-    if i < j:
-        shusi = set(L[i:j])
-    else:
-        shusi = set(L[i:]) | set(L[:j])
-
+    shusi = set(islice(L,l,r))
     count = len(shusi)
 
     if C not in shusi:
@@ -25,9 +18,7 @@ while i<N:
 
     result = max(count,result)
 
-    i+=1
-    j+=1
-    if j > N:
-        j = 1
+    i += 1
+    L.appendleft(L.pop())
 
 print(result)
