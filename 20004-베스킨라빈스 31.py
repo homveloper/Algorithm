@@ -1,0 +1,1 @@
+print(*(i+1for i in range(int(input()))if 30%(i+2)==0),sep='\n')
