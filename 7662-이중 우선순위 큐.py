@@ -1,32 +1,27 @@
-from sys import stdin
-import heapq
-
-input = stdin.readline
-
-T = int(input())
-
-for _ in range(T):
-
-    K = int(input())
-    H = []
-    min_value = []
-
-    for _ in range(K):
-        cmd = input().split()
-
-        if cmd[0] == 'I':
-            heapq.heappush(H, -int(cmd[1]))
+	import heapq
+import sys
+input = sys.stdin.readline
+ 
+for _ in range(int(input())):
+    minq, maxq = [], []
+    visited = [False for _ in range(1000001)]
+    for i in range(int(input())):
+        alpha, num = input().split()
+        if alpha == 'I':
+            heapq.heappush(minq, (int(num), i))
+            heapq.heappush(maxq, (-int(num), i))
+            visited[i] = True
+        elif num == '-1':
+            while minq and not visited[minq[0][1]]: heapq.heappop(minq)
+            if minq:
+                visited[minq[0][1]] = False
+                heapq.heappop(minq)
         else:
-            if not H:
-                continue
-
-            if cmd[1] == '1':
-                print(heapq.heappop(H))
-            else:
-                min_value.append(heapq.nsmallest(1,H)[0])
-                print(min_value)
-
-    if len(H) > len(min_value):
-        print(-heapq.nlargest(1,H), min_value)
-    else:
-        print("EMPTY")
+            while maxq and not visited[maxq[0][1]]: heapq.heappop(maxq)
+            if maxq:
+                visited[maxq[0][1]] = False
+                heapq.heappop(maxq)
+    
+    while minq and not visited[minq[0][1]]: heapq.heappop(minq)
+    while maxq and not visited[maxq[0][1]]: heapq.heappop(maxq)
+    print(f'{-maxq[0][0]} {minq[0][0]}' if maxq and minq else'EMPTY')
