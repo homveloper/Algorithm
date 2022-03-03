@@ -9,6 +9,10 @@ int L[MAX] = {0};      // 1번이라도 나온 결과라면 1로 저장 -1000 �
 
 void Input()
 {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
     cin>>N;
 }
 
@@ -16,7 +20,6 @@ void Solution()
 {
     for(int i=0; i<N; i++){
         int n;  cin>>n;
-
         L[n+IDX_OFFSET] = 1;
     }
 
