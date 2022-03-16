@@ -37,6 +37,10 @@ int answer = 0;
 
 void Input()
 {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
     cin>>N>>M;
     cin>>R.y>>R.x;
 
