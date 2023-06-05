@@ -1,0 +1,21 @@
+fn solution(a : u8 , b : u8) -> u8 {
+    a + b
+}
+
+fn main() {
+
+    loop {
+        let mut input = String::new();
+        std::io::stdin().read_line(&mut input).unwrap();
+
+        if input.trim() == "0 0" {
+            break;
+        }
+
+        let mut iter = input.trim().split_whitespace();
+        let a : u8 = iter.next().unwrap().parse().unwrap();
+        let b : u8 = iter.next().unwrap().parse().unwrap();
+
+        println!("{}", solution(a,b));
+    }
+}
